@@ -317,9 +317,9 @@ rhel7stig_bootloader_password: 'Boot1tUp!'
 rhel7stig_boot_password_config:
     - regexp: ^set superusers
       line: 'set superusers="root"'
-# Eric - not working
-#    - regexp: ^password_pbkdf2 root
-#      line: password_pbkdf2 root {{ rhel7stig_bootloader_password | grub2_hash(salt='KeokpkECTJeoDhEA5XtiLQ') }}
+
+    - regexp: ^password_pbkdf2 root
+      line: password_pbkdf2 root {{ rhel7stig_bootloader_password | grub2_hash(salt='KeokpkECTJeoDhEA5XtiLQ') }}
 
 # AIDE settings
 rhel7stig_aide_cron:
